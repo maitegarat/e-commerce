@@ -139,3 +139,91 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/* Entrega 01 - Listado de productos, categoría autos*/
+
+.precio{
+  color:#229fbc;
+  font-size: 14pt ;
+}
+
+.imagsiz{
+width: 350px;
+height: 220px;
+border-radius: 4px;
+}
+
+.descrp{
+  text-align: justify;
+}
+
+.grid{
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 60px;
+  margin-left: 10%;
+}
+
+
+#center0{
+ grid-column-start: 1;
+ grid-column-end: 1;
+}
+
+#center1{
+  grid-column-start: 2;
+ grid-column-end: 2;
+}
+
+
+#center2{
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+
+#center3{
+  grid-row-start: 2;
+  grid-column-start: 1;
+ grid-column-end: 1;
+}
+
+/* Entrega 01 - Log In*/
+
+#logimg{
+width: 50%;
+height: 50%;  
+}
+
+#logbttn{
+  font-size: 15pt;
+  padding: 6px 80px;
+  color: white;
+  background-color: #229fbc;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+}
+
+.background-image {
+  background-image: url("https://raw.githubusercontent.com/maitegarat/e-commerce/main/img/login_back.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.textarea {
+  height: 40px;
+  width: 380px;
+}
+
+#checkbox1 {
+margin-left: -225px;
+}
+#checkbox2 {
+  margin-left: -277px;
+  }
+
+.invalid {
+ background-color: #cc86b0;
+  color: white;
+}
