@@ -6,11 +6,12 @@ function cargarDatos(url) {
         .then(respuesta => respuesta.json())
        
         .then(datos => {
-                      
+            
+            let lista = "";          
             for (let i = 0; i < datos.length; i++) {
 
-            let lista = "";
-            lista = `
+            
+            lista += `
                         <div  id = "center`+ i +`">
                             <p> <img src = "${ datos[i].imgSrc }" class = "imagsiz"> </p>
                             <h3>${datos[i].name}</h3>
@@ -21,9 +22,9 @@ function cargarDatos(url) {
                         
                         `;
 
-                        document.getElementById("list").innerHTML += lista;
+                       
             };
-
+            document.getElementById("list").innerHTML = lista;
            
         
         })
