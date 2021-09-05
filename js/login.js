@@ -34,11 +34,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
 
     if (camposCompletos) {
+      localStorage.setItem('user_logged', inputEmail.value);
       window.location = "inicio.html";
     } else {
       alert("Ingresar los datos por favor");
     }
 
   })
+  
 
 });

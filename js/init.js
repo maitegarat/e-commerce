@@ -38,10 +38,33 @@ var getJSONData = function(url){
         hideSpinner();
         return result;
     });
-}
+};
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+
+
+/*Función que se ejecuta una vez que se haya lanzado el evento de
+que el documento se encuentra cargado, es decir, se encuentran todos los
+elementos HTML presentes*/
+
+
 document.addEventListener("DOMContentLoaded", function(e){
+  let username = window.localStorage.getItem('user_logged');
+  let user_logged = document.getElementById('user-logged');
+   
+  user_logged.innerHTML  = `<button type="button" class="btn btn-default dropdown-toggle" style="color: white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span class="icon-user" id= "user_logged" style="color: white;"> </span> `+ username +`
+  <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+  <li><a href="#">Perfil</a></li>
+  <li><a href="#">Lista de Deseos</a></li>
+  <li><a href="#">Mis Compras</a></li>
+  <li><hr></li>
+  <li><a href="#" id="Singout" onclick="signOut()">Cerrar Sesión</a></li>
+</ul> `
+
+ document.getElementById("Singout").addEventListener("click", function() {
+    localStorage.removeItem("user_logged");
+    window.location = "index.html";
+  });
 });
