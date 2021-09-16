@@ -1,0 +1,17 @@
+{
+    "id": "4",
+    "name": "Peugeot 208",
+    "description": "Diseño deportivo, calidad interior y un dinamismo confortable para la última entrega del utilitario francés, que se ofrece con mecánicas de gasolina, diésel y eléctrica",
+    "cost": 15200,
+    "currency": "USD",
+    "soldCount": 17,
+    "category": "Autos",
+    "images": [
+        "img/prod4.jpg",
+        "img/prod4_1.jpg",
+        "img/prod4_2.jpg",
+        "img/prod4_3.jpg",
+        "img/prod4_4.jpg"
+    ],
+    "relatedProducts": [2, 4]
+}

@@ -1,0 +1,17 @@
+{
+    "id": "3",
+    "name": "Suzuki Celerio",
+    "description": "Su espacio interior y la elevación de sus asientos ofrecen una experiencia única de confort para el disfrute de su andar. Tan seguro como todo Suzuki e increíblemente eficiente energéticamente",
+    "cost": 12500,
+    "currency": "USD",
+    "soldCount": 25,
+    "category": "Autos",
+    "images": [
+        "img/prod3.jpg",
+        "img/prod3_1.jpg",
+        "img/prod3_2.jpg",
+        "img/prod3_3.jpg",
+        "img/prod3_4.jpg"
+    ],
+    "relatedProducts": [1, 3]
+}
