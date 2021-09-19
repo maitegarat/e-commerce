@@ -137,7 +137,7 @@ a.custom-card:hover {
 }
 
 .checked {
-  color: orange;
+  color: #fd4;
 }
 
 /* Entrega 01 - Listado de productos, categoría autos*/
@@ -252,4 +252,103 @@ margin-left: -225px;
 #search {
  margin-left: 520px;
  width: 400px;
+}
+
+.star-rating{
+  float: left;
+}
+
+.star-rating > input{
+  display: none;
+
+}
+
+.star-rating label {
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type=radio]:checked ~ label {
+    color: #fd4;
+}
+
+
+/*Prueba css*/
+
+
+
+.centrado {
+  margin: auto;
+  margin-left: 350px;
+  margin-right: 350px;
+}
+
+.infocentrado{
+  position: relative;
+  text-align: center;
+  left: 400px;
+  right: 350px;
+  width: 700px;
+}
+
+.centrado .newcomentario {
+  margin: auto;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.comments {
+  margin-top: 100px;
+  display: block;
+}
+
+/*.comments {
+  position:relative;
+  margin: auto;
+  width:50%;
+  padding: 10px;
+  border: solid #b7b4b4 1px;
+}*/
+
+.carousel{
+  position: relative;
+  margin: auto;
+}
+.carousel-indicators{
+  position: relative;
+  margin: auto;
+  margin-right: 100px;
+  height:105px;
+  width: 100%; 
+}
+.carousel-indicators li{
+  text-indent:0;
+  display:inherit;
+  float:left;
+  width: 20%;
+  height: 100px;
+  margin:5px 0px;
+}
+.carousel-indicators li img{
+  width: 40%;
+  height: 100px;
+  padding: 2px;
+}
+.carousel-indicators .active img{
+  border:2px solid #229fbc;
+}
+.carousel-indicators .active{
+  margin:5px 0px;
+  width: 20%;
+  height: 100px;
+}
+.carousel-control-next.right,
+.carousel-control-prev.left{
+  background-image: none;
 }

@@ -11,9 +11,10 @@ function cargarDatos(array) {
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(array[i].cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(array[i].cost) <= maxCount))) {
-           
-            if (search == undefined || array[i].name.toLowerCase().includes(search)|| array[i].description.toLowerCase().includes(search)){
-
+         
+       
+           if (search == undefined || array[i].name.toLowerCase().includes(search)|| array[i].description.toLowerCase().includes(search)){
+            
             lista += `
                         <div  id = "celda`+ n + `">
                             <p> <img src = "${array[i].imgSrc}" class = "imagsiz"> </p>
@@ -21,6 +22,8 @@ function cargarDatos(array) {
                             <p class = "descrp">${array[i].description}</p>
                             <p class = "precio">${array[i].cost} ${array[i].currency}</p>
                             <em> Artículos vendidos: ${array[i].soldCount}</em>
+                            <br> <hr>  
+                            <button class= "btn btn-outline-dark" id="verMasBttn" onclick="verAuto(`+ array[i].id +`)")> Ver más </button>
                         </div>
 
                   `;
@@ -60,8 +63,9 @@ function sortCars(criterio, array) {
     }
 
     return result;
-
+ 
 }
+
 
 function sortAndShowCars(sortCriteria, productsArray) {
     currentSortCriteria = sortCriteria;
@@ -75,6 +79,12 @@ function sortAndShowCars(sortCriteria, productsArray) {
     //Muestro los productos ordenados
     cargarDatos(currentProductsArray);
 }
+
+
+function verAuto (id) {
+    localStorage.setItem("idAuto", id)  
+    window.location = "product-info.html"
+   }
 
 
 /*Función que se ejecuta una vez que se haya lanzado el evento de que el documento 
@@ -139,4 +149,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
         };
     });
 });    
-

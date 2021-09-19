@@ -1,7 +1,7 @@
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
+const PRODUCTS_URL = "https://raw.githubusercontent.com/maitegarat/e-commerce/main/js/products.json";
 const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
@@ -48,7 +48,7 @@ elementos HTML presentes*/
 
 
 document.addEventListener("DOMContentLoaded", function(e){
-  let username = window.localStorage.getItem('user_logged');
+  let username = window.localStorage.getItem('user');
   let user_logged = document.getElementById('user-logged');
    
   user_logged.innerHTML  = `<button type="button" class="btn btn-default dropdown-toggle" style="color: white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 </ul> `
 
  document.getElementById("Singout").addEventListener("click", function() {
-    localStorage.removeItem("user_logged");
+    localStorage.removeItem("user");
     window.location = "index.html";
   });
 });
