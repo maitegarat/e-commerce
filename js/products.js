@@ -2,6 +2,11 @@ var minCount = undefined;
 var maxCount = undefined;
 var search = undefined;
 
+function verAuto (id) {
+    localStorage.setItem("idAuto", id)  
+    window.location = "product-info.html"
+   }
+
 function cargarDatos(array) {
     document.getElementById("list").innerHTML = "";
 
@@ -79,12 +84,6 @@ function sortAndShowCars(sortCriteria, productsArray) {
     //Muestro los productos ordenados
     cargarDatos(currentProductsArray);
 }
-
-
-function verAuto (id) {
-    localStorage.setItem("idAuto", id)  
-    window.location = "product-info.html"
-   }
 
 
 /*Función que se ejecuta una vez que se haya lanzado el evento de que el documento 

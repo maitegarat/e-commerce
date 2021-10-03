@@ -58,9 +58,11 @@
              </ol>
 
             </div>
+
             
         </div>`;
 
+        
     auto.innerHTML = mostrar;
     };
 
@@ -71,8 +73,8 @@
         
         for(let i=0; i < comments.length; i++){
             arrayComentarios += `
-             <div class="comentarios"><strong>`+ comments[i].user + `</strong><div class="fecha" style="display: inline;"> <small> ` + comments[i].dateTime +` </small> </div></div>
-             <div class="desc"><p>`+ comments[i].description +`</div>
+             <div class="comentarios"><strong>${ comments[i].user}</strong><div class="fecha" style="display: inline;"> <small> ${comments[i].dateTime} </small> </div></div>
+             <div class="desc"><p> ${comments[i].description}</div>
              <div class="scores"> Puntuación: `+ comments[i].score +" "        
                 for (let j=0; j < comments[i].score; j++){
                     arrayComentarios += `<span class="fa fa-star checked"></span>`;
@@ -89,8 +91,38 @@
        
     }
 
+    function verAuto (id) {
+        localStorage.setItem("idAuto", id)  
+        window.location = "product-info.html"
+       }
+
+   function relatedProducts(array){
+       
+        for (i=0; i<array.relatedProducts.length; i++){
+            reltdProduct =  `
+
+           
+            <div class="col">
+                <div class="card">
+                  <img src="`+ productos[array.relatedProducts[i]].imgSrc +` " class="card-img-top" alt="...">
+                  <div class="card-body">
+                 <h5 class="card-title">  `+ productos[array.relatedProducts[i]].name +` </h5>
+                 <p class="card-text" style="height: 50px;">`+ productos[array.relatedProducts[i]].description +` </p>
+                 <br>
+                 <p class="card-text"> `+ productos[array.relatedProducts[i]].cost + productos[array.relatedProducts[i]].currency+`</p>
+                 <button class="btn btn-outline-dark" onclick="verAuto(`+ productos[array.relatedProducts[i]].id +`)">Ver más</button>
+                </div>       
+                          
+            <div>`
+            
+            document.getElementById("prodReltd").innerHTML += reltdProduct
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", function (e) {
-              
+       
+        
+
         if (localStorage.getItem("idAuto") === "1" ) { 
          url =  "https://japdevdep.github.io/ecommerce-api/product/5678.json";
         } else if (localStorage.getItem("idAuto").value === "2" ) {
@@ -104,7 +136,17 @@
         getJSONData(url).then(function (resultObj) {
             if (resultObj.status === "ok") {
                 infoAuto = resultObj.data;
-             showCarInfo(infoAuto);
+                getJSONData(PRODUCTS_URL).then(function (resultObj) {
+                    if (resultObj.status === "ok") {
+                        productos = resultObj.data;
+                        showCarInfo(infoAuto);
+                        relatedProducts(infoAuto);
+                    }
+                    else{
+                        throw Error(resultObj.statusText)
+                    }
+                });
+             
             }
             else{
                 throw Error(resultObj.statusText)
@@ -125,13 +167,13 @@
 
             
         let date= new Date();
-        let dia = date.getDay();
-        let mes = date.getMonth();
-        let anio = date.getFullYear();
-        let hora = date.getHours();
-        let minutos = date.getMinutes();
-        let sec = date.getSeconds();
-        let fecha = anio + "-" + mes + "-" + dia + " " + hora + ":" + minutos + ":" + sec;
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let nuevaFecha = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
 
 
 
@@ -141,7 +183,7 @@
                 id_auto: JSON.parse(localStorage.getItem('idAuto')),
                 user: localStorage.getItem('user'),
                 description: document.getElementById('newCommArea').value,
-                dateTime: fecha,
+                dateTime: nuevaFecha,
                 score: getRating()
             };
 
@@ -153,5 +195,7 @@
 
            
         });
+
+        
     });
 
