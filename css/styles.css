@@ -148,8 +148,8 @@ a.custom-card:hover {
 }
 
 .imagsiz{
-width: 350px;
-height: 220px;
+width: 100%;
+height:100%;
 border-radius: 4px;
 }
 
@@ -158,7 +158,7 @@ border-radius: 4px;
   width: 350px;
 }
 
-.grid{
+/*.grid{
   display: grid;
   grid-column-gap: 50px;
   grid-row-gap: 60px;
@@ -187,7 +187,7 @@ border-radius: 4px;
   grid-row-start: 2;
   grid-column-start: 1;
  grid-column-end: 1;
-}
+}*/
 
 /* Entrega 01 - Log In*/
 
@@ -227,7 +227,7 @@ margin-left: -225px;
 
 .invalid {
  background-color: #cc86b0;
-  color: white;
+color: white;
 }
 
 
@@ -236,11 +236,8 @@ margin-left: -225px;
  padding-right: 10px;
 }
 
-.container1 {
-  padding-top: 40px;
-}
 
-#order {
+/*#order {
   padding-left: 190px;
 }
 
@@ -252,7 +249,7 @@ margin-left: -225px;
 #search {
  margin-left: 520px;
  width: 400px;
-}
+}*/
 
 .star-rating{
   float: left;
@@ -352,3 +349,27 @@ margin-left: -225px;
 .carousel-control-prev.left{
   background-image: none;
 }
+
+.respFont{
+  font-size: vh;
+  font-size: calc(2hv + .75vw);
+}
+
+textarea{
+  resize: none;
+}
+
+.header {
+  color:  #229fbc;
+}
+
+.nav-link {
+ color: gray;
+}
+
+
+.nav-link:hover {
+  color: #229fbc;
+}
+
+

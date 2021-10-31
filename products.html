@@ -22,76 +22,81 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="btn-group" role="group" id="user-logged"></div>
+      <div class="d-md-inline-block btn-group d-none" role="group" id="user-logged"></div>
     </div>
   </nav>
 
-  <div class="container1">
+  <div class="m-5 p-3">
+
     <div class="row">
-      <div id="order">
-        <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+
+      <div class="col-lg-6 col-md-12" style="margin-left: -1%;" id="order">
+
+        <div class="btn-group btn-group-toggle mb-2" data-toggle="buttons">
+
           <label class="btn btn-light active" id="sortMinCost">
-            <input type="radio" name="options" autocomplete="off" checked> <i
-              class="fas fa-long-arrow-alt-down"></i><strong></strong>
+            <input type="radio" name="options" autocomplete="off" checked> <i class="fas fa-long-arrow-alt-down"></i>
           </label>
+
           <label class="btn btn-light" id="sortMaxCost">
             <input type="radio" name="options" autocomplete="off"><i
               class="fas fa-long-arrow-alt-up"></i><strong></strong> Precio
           </label>
+
           <label class="btn btn-light" id="sortByCount">
             <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>
             Relevancia
           </label>
+
         </div>
       </div>
-      <div><input class="form-control" type="search" placeholder="Buscar..." id="search"></div>
+
     </div>
 
-    <div class="row text-left" id="filter">
-        <div class="row container p-0 m-0">
-          <div class="col">
-            <input class="form-control" type="number" placeholder="Precio min." id="rangeFilterCountMin">
-          </div>
-          <div class="col">
-            <input class="form-control" type="number" placeholder="Precio máx." id="rangeFilterCountMax">
-          </div>
-          <div class="col-3 p-0">
-            <div class="btn-group" role="group">
-              <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-              <button class="btn btn-light btn-sm" id="clearRangeFilter"> <i class="fas fa-trash"></i> </button>
-            </div>
+    <div class="row">
+      <div class=" col-lg-5 text-left" id="filter">
+        <div class="row">
+          <input class="form-control col-lg-4 col-md-5 mr-2" type="number" placeholder="Precio min." id="rangeFilterCountMin">
+          <input class="form-control col-lg-4 col-md-5" type="number" placeholder="Precio máx." id="rangeFilterCountMax">
+          <div class="btn-group col-lg-3 col-md-12" role="group">
+            <button class="btn btn-light btn-block p-0" id="rangeFilterCount">Filtrar</button>
+            <button class="btn btn-light btn-sm" id="clearRangeFilter"> <i class="fas fa-trash"></i> </button>
           </div>
         </div>
-     </div>
-
-    <div class="container p-5 grid" id="list">
+      </div>
+      <div class="col-lg-1"></div>
+      <input class="form-control col-lg-6 col-md-12" type="search" placeholder="Buscar..." id="search">
     </div>
 
-    
-
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-      </div>
-    </footer>
-
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+    <div class="row" id="list">
     </div>
+</div>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
+
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
 </body>
 
 </html>

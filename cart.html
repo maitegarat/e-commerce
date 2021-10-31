@@ -11,6 +11,8 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
 
   <style>
     .bd-placeholder-img {
@@ -34,6 +36,7 @@
 </head>
 
 <body>
+  <!------------------------------------- Nav bar ---------------------------------->
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -43,14 +46,113 @@
       <div class="btn-group" role="group" id="user-logged"> </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <!-------------------------------------- Nav bar----------------------------------->
+
+  <div class="container-fluid py-5 pr-5">
+    <div class="row">
+
+      <div class="col-md-6 col-12 px-5">
+
+        <div class="row px-4 pb-4">
+          <img class="col-5" src="img/loginimg.png" alt="">
+          <h2 class="col-auto"></h2>
+        </div>
+
+        <div class="row px-5">
+          <h5 class="col-12 header" id="DatosDeFacturacion">Datos de Facturación</h5>
+          <p class="col-3">Dirección</p>
+          <input class="col-9 form-control" type="text" name="Adress" id="adress"
+            placeholder="Calle, número, apartamento...">
+          <p class="col-3">Esquina</p>
+          <input class="col-9 form-control" type="text" name="Adress" id="adress" placeholder="">
+
+          <div class="form-group col-12">
+            <label for="selectCountry" required>País</label>
+            <select class="form-control" id="selectCountry" required>
+              <option value disabled selected>--Eliga por favor--</option>
+              <option value="1">Argentina</option>
+              <option value="2">Brasil</option>
+              <option value="3">Chile</option>
+              <option value="4">Paraguay</option>
+              <option value="5">Uruguay</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="row px-5 pt-3">
+          <h5 class="col-12 header fw-light" id="TipoDeEnvio">Tipo de Envío</h5>
+          <div class="col-12">
+            <input type="radio" value="1.15" name="shipping" id="Premium" onclick="Shipping()" required checked> Premium
+            (2-5 días)
+            <small> Costo del 15% sobre el subtotal</small>
+            <br>
+            <input type="radio" value="1.07" name="shipping" id="Express" onclick="Shipping()" required> Express (5-8 días)
+            <small> Costo del 7% sobre el subtotal</small>
+            <br>
+            <input type="radio" value="1.05" name="shipping" id="Standard" onclick="Shipping()" required> Standard (12 a 15 días)
+            <small> Costo del 5% sobre el subtotal</small>
+            <br>
+          </div>
+          <div id="importeTotal"></div>
+        </div>
+
+        <div class="row px-5 pt-4">
+          <h5 class="col-12 header" id="FormaDePago">Forma de Pago</h5>
+          <div class="col-12">
+            <input type="radio" value="1.07" name="payMethod" id="Express" onclick="Shipping()" required checked> Tarjeta de Crédito <br>
+            <input type="radio" value="1.05" name="payMethod" id="Standard" onclick="Shipping()" required> Transferencia
+            Bancaria<br>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="col-md-6 col-12 p-5 border border-black" style="background-color: #fcfcfc ;" id="Carrito">
+
+
+        <div class="row px-5" style="border-bottom: 1px #dbdbdb solid ;">
+
+          <h5 class="col-md-7 col-sm-6 header text-left"> Productos </h5>
+
+          <h5 class="col-md-3 col-sm-3 header text-left "> Cantidad </h5>
+
+          <h5 class="col-md-2 col-sm-3 header text-left"> Subtotal </h5>
+
+        </div>
+
+        <div class="row px-5 ">
+          <div class="col-12" id="cartContent"></div>
+        </div>
+
+        <div class="row justify-content-end px-5 pt-3 pb-4" style="border-top: 1px #dbdbdb solid">
+          <div class="col-3"> TOTAL </div>
+          <div class="col-2" id="total"></div>
+        </div>
+
+        <div class="row justify-content-end px-5 py-3">
+          <div class="col-3"> Shipping </div>
+          <small class="col-2" id="importeTotal"> A resolver en próxima entrega</small>
+        </div>
+
+        <div class="row justify-content-end px-5 pt-3" style="border-top: 1px #dbdbdb solid">
+          <div class="col-3"> IMPORTE TOTAL </div>
+          <small class="col-2" id="importeTotal"> TOTAL+Shipping</small>
+        </div>
+      </div>
     </div>
+    <div class="row d-flex justify-content-end pt-3 ">
+      <button class="col-2 btn btn-outline-secondary"> Seguir Comprando </button>
+      <div class="col-auto"></div>
+      <button class="col-2 btn btn-info" data-toggle="modal" data-target="#staticBackdrop" id="buycart"
+        type="submit">CHECK OUT</button>
+    </div>
+
+
+
   </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -59,11 +161,39 @@
       <div></div>
     </div>
   </div>
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+
 </body>
 
 </html>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <small class="modal-title" id="staticBackdropLabel"> NOTIFICACIÓN DE COMPRA </small>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center mt-2">
+        <h5>¡Tú compra ha sido realizada con éxito!</h5>
+        <i class="far fa-check-circle" style="font-size: 100px; color: #229fbc;"></i>
+        <div class="modal-footer mt-5">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#staticBackdrop"
+            onclick="c">COMPROBANTE DE COMPRA</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -21,16 +21,15 @@ function cargarDatos(array) {
            if (search == undefined || array[i].name.toLowerCase().includes(search)|| array[i].description.toLowerCase().includes(search)){
             
             lista += `
-                        <div  id = "celda`+ n + `">
-                            <p> <img src = "${array[i].imgSrc}" class = "imagsiz"> </p>
-                            <h3>${array[i].name}</h3>
-                            <p class = "descrp">${array[i].description}</p>
-                            <p class = "precio">${array[i].cost} ${array[i].currency}</p>
-                            <em> Artículos vendidos: ${array[i].soldCount}</em>
-                            <br> <hr>  
-                            <button class= "btn btn-outline-dark" id="verMasBttn" onclick="verAuto(`+ array[i].id +`)")> Ver más </button>
+                        <div class="col-lg-4 col-md-12 my-5" id = "celda`+ n + `">  
+                        <p> <img src = "${array[i].imgSrc}" class = "row imagsiz"> </p>
+                            <h4 class = "row" style="width: 100%;">${array[i].name}</h4>
+                            <p class = "row descrp" style="width: 100%;">${array[i].description}</p>
+                            <p class = "row precio">${array[i].cost} ${array[i].currency}</p>
+                            <em class = "row pb-3"> Artículos vendidos: ${array[i].soldCount}</em>
+                            <hr style="border-color:#555254; margin-right:8%;">
+                            <button class= "btn btn-outline-info" id="verMasBttn" onclick="verAuto(`+ array[i].id +`)" style="float: right; margin-right: 5%;")> Ver más </button>
                         </div>
-
                   `;
             n = n + 1;
             };

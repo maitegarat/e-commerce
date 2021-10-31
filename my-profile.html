@@ -40,29 +40,72 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="btn-group" role="group" id="user-logged"> </div>
+      <div class="d-none d-md-inline-block btn-group" role="group" id="user-logged"> </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="p-5 mr-4">
+    <div class="row">
+
+    <div class="col-lg-2 d-none d-lg-inline-block mt-5">
+      <nav class="nav flex-column mr-3" style="background-color: #e1eef1; border-radius: 5%;">
+        <a href="https://ibb.co/YNWG8Lp"><img src="https://i.ibb.co/0nX3ZGh/3523415-01.png" alt="3523415-01" class="ml-3 my-3" style="height:30%; width:30%; border-radius: 50%;background-color: whitesmoke; border: solid .5px gray;"></a><a target='_blank' href='https://imgbb.com/'></a>
+        <a class="nav-link" href="#">Perfil</a>
+        <a class="nav-link" href="#">Mis compras</a>
+        <a class="nav-link" href="cart.html">Mi carrito</a>
+        <a class="nav-link" href="#" >Lista de deseos</a>
+      </nav>
     </div>
+
+    <div class="col-lg-10 pr-5">
+  <div class="row">
+    <div class="col-lg-5">
+      <a href="https://ibb.co/YNWG8Lp"><img src="https://i.ibb.co/0nX3ZGh/3523415-01.png" alt="3523415-01" style="height:100%; width:100%;"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br />
+    </div>
+    <form class="col-lg-7 needs-validation" novalidate>
+      <h4 class="row p-3"> Datos Personales </h4>
+      <div class="row pt-3">
+        <label class="col-lg-6" for="profileName">Nombre
+          <input type="text" class="form-control " name="name" id="profileName" required>
+        </label>
+        <label class="col-lg-6" for="profileSurname">Apellido
+          <input type="text" class="form-control " name="surname" id="profileSurname" required>
+        </label>
+      </div>
+      <div class="row pt-3">
+        <label class="col-lg-2 mt-2" for="profileAge">Edad
+          <input type="number" class="form-control" name="age" id="profileAge" required>
+        </label>
+        <label class="col-lg-5 mt-2" for="profileMail">E-mail
+          <input type="email" class="form-control" name="mail" id="profileMail" required>
+        </label>
+        <label class="col-lg-5 mt-2" for="profilePhone">Teléfono
+          <input type="text" class="form-control" name="telephone" id="profilePhone" required>
+        </label>
+      </div>
+      <button class="btn btn-outline-info mt-5" style="float: right;" type="submit">Actualizar</button>
+    </form>
   </div>
+</div>
+</div>
+
+</div>
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
